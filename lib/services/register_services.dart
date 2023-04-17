@@ -42,7 +42,7 @@ class RegisterService {
         },
       );
 
-     // debugPrint("cp4");
+      // debugPrint("cp4");
 
       debugPrint(res.body);
 
@@ -55,7 +55,6 @@ class RegisterService {
               'Congrats! You have been registered.',
             );
           });
-
     } catch (e) {
       debugPrint(e.toString());
       // showSnackBar(context, e.toString());

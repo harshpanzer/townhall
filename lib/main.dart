@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:townhall/screens/success_screen.dart';
 import 'package:townhall/services/recaptcha_service.dart';
 import 'package:townhall/screens/splash_screen.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'TownHall',
-      home: SplashScreen(),
+      home: Success_Screen(),
     );
   }
 }
