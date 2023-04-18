@@ -26,7 +26,11 @@ class DropdownButtonExample extends StatefulWidget {
 }
 
 class _DropdownButtonExampleState extends State<DropdownButtonExample> {
-  late String dropdownValue = (widget.label == 'Section')?(Student.year != '1st Year')?'I':'S1':widget.list.first;
+  late String dropdownValue = (widget.label == 'Section')
+      ? (Student.year != '1st Year')
+          ? 'I'
+          : 'S1'
+      : widget.list.first;
 
   @override
   Widget build(BuildContext context) {
@@ -36,15 +40,19 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
       icon: Icon(
         Icons.arrow_downward,
         size: widget.fontSize,
-        color: AppColors.backColor,
+        color:
+            widget.width > 710.0 ? AppColors.backColor : AppColors.whiteColor,
       ),
       elevation: 16,
-      style:  GoogleFonts.getFont(
+      style: GoogleFonts.getFont(
         'Ubuntu',
         fontSize: widget.fontSize,
-        color: AppColors.backColor,
+        color:
+            widget.width > 710.0 ? AppColors.backColor : AppColors.whiteColor,
         fontWeight: FontWeight.w300,
       ),
+      dropdownColor:
+          widget.width > 710.0 ? AppColors.whiteColor : AppColors.backColor,
       underline: Container(
         height: 1,
         color: Colors.transparent,
@@ -63,11 +71,11 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
         });
       },
       items: widget.list.map<DropdownMenuItem<String>>((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
     );
   }
 }

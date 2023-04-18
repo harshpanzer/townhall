@@ -131,13 +131,40 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
             ),
             Container(
               height: height,
-              color: Colors.transparent,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.black,
+                    Colors.transparent,
+                  ],
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                  stops: [0.3, 0.7],
+                  tileMode: TileMode.repeated,
+                ),
+              ),
               child: SingleChildScrollView(
                 padding: EdgeInsets.all(height * 0.02),
                 child: Column(
                   // crossAxisAlignment: CrossAxisAlignment.start,
 
                   children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "images/logo.png",
+                          fit: BoxFit.fitWidth,
+                          width: width * 0.10,
+                        ),
+                        Image.asset(
+                          "images/title.png",
+                          fit: BoxFit.fitWidth,
+                          width: width * 0.20,
+                        ),
+                      ],
+                    ),
                     SizedBox(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
@@ -151,15 +178,15 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                               color: AppColors.whiteColor,
                             ),
                           ),
-                          Text(
-                            '2023',
-                            style: GoogleFonts.getFont(
-                              'Josefin Sans',
-                              fontWeight: FontWeight.bold,
-                              fontSize: height * 0.06,
-                              color: AppColors.whiteColor,
-                            ),
-                          )
+                          // Text(
+                          //   '2023',
+                          //   style: GoogleFonts.getFont(
+                          //     'Josefin Sans',
+                          //     fontWeight: FontWeight.bold,
+                          //     fontSize: height * 0.06,
+                          //     color: AppColors.whiteColor,
+                          //   ),
+                          // )
                         ],
                       ),
                     ),
@@ -176,8 +203,8 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                           const Color(0xFFFFFFFF).withOpacity(0.05),
                         ],
                         stops: const [
-                          0.1,
-                          1,
+                          0.3,
+                          0.7,
                         ],
                       ),
                       borderGradient: LinearGradient(
@@ -189,23 +216,23 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                         ],
                       ),
                       width: width * 0.9,
-                      height: height * 2,
+                      height: height + 35.0,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: EdgeInsets.all(height * 0.02),
-                            child: Text(
-                              'Register Now!',
-                              style: GoogleFonts.getFont(
-                                'Ubuntu',
-                                fontSize: width * 0.08,
-                                color: AppColors.whiteColor,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
+                          // Padding(
+                          //   padding: EdgeInsets.all(height * 0.02),
+                          //   child: Text(
+                          //     'Register Now!',
+                          //     style: GoogleFonts.getFont(
+                          //       'Ubuntu',
+                          //       fontSize: width * 0.08,
+                          //       color: AppColors.whiteColor,
+                          //       fontWeight: FontWeight.w400,
+                          //     ),
+                          //   ),
+                          // ),
                           Padding(
                             padding: EdgeInsets.fromLTRB(
                                 height * 0.01, 0, height * 0.01, height * 0.01),
@@ -261,7 +288,7 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                                           padding: EdgeInsets.symmetric(
                                               horizontal: height * 0.005),
                                           decoration: BoxDecoration(
-                                            color: Colors.white,
+                                            color: Color(0x33f6f4f7),
                                             borderRadius:
                                                 const BorderRadius.all(
                                               Radius.circular(8),
@@ -298,7 +325,7 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                                                 padding: EdgeInsets.symmetric(
                                                     horizontal: height * 0.005),
                                                 decoration: BoxDecoration(
-                                                  color: Colors.white,
+                                                  color: Color(0x33f6f4f7),
                                                   borderRadius:
                                                       const BorderRadius.all(
                                                     Radius.circular(8),
@@ -338,7 +365,7 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                                                 padding: EdgeInsets.symmetric(
                                                     horizontal: height * 0.005),
                                                 decoration: BoxDecoration(
-                                                  color: Colors.white,
+                                                  color: Color(0x33f6f4f7),
                                                   borderRadius:
                                                       const BorderRadius.all(
                                                     Radius.circular(8),
@@ -384,7 +411,7 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                                                 padding: EdgeInsets.symmetric(
                                                     horizontal: height * 0.005),
                                                 decoration: BoxDecoration(
-                                                  color: Colors.white,
+                                                  color: Color(0x33f6f4f7),
                                                   borderRadius:
                                                       const BorderRadius.all(
                                                     Radius.circular(8),
@@ -430,7 +457,7 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                                                 padding: EdgeInsets.symmetric(
                                                     horizontal: height * 0.005),
                                                 decoration: BoxDecoration(
-                                                  color: Colors.white,
+                                                  color: Color(0x33f6f4f7),
                                                   borderRadius:
                                                       const BorderRadius.all(
                                                     Radius.circular(8),
@@ -454,8 +481,8 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                                                           GoogleFonts.getFont(
                                                         'Ubuntu',
                                                         fontSize: fontSize,
-                                                        color:
-                                                            AppColors.backColor,
+                                                        color: AppColors
+                                                            .whiteColor,
                                                         fontWeight:
                                                             FontWeight.w300,
                                                       ),
@@ -515,90 +542,98 @@ class _PhoneRegistrationScreenState extends State<PhoneRegistrationScreen> {
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: width * 0.06,
-                                vertical: height * 0.02),
-                            child: Text(
-                              'Rate Your Knowledge',
-                              style: GoogleFonts.getFont(
-                                'Ubuntu',
-                                fontSize: height * 0.03,
-                                color: AppColors.whiteColor,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: height * 0.015,
-                              horizontal: width * 0.06,
-                            ),
-                            child: rateDomain("App Development", context),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: height * 0.015,
-                              horizontal: width * 0.06,
-                            ),
-                            child: rateDomain("Web Development", context),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: height * 0.015,
-                              horizontal: width * 0.06,
-                            ),
-                            child: rateDomain("Machine Learning", context),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: height * 0.015,
-                              horizontal: width * 0.06,
-                            ),
-                            child: rateDomain("Big Data", context),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: height * 0.015,
-                              horizontal: width * 0.06,
-                            ),
-                            child: rateDomain("Designing", context),
-                          ),
-                          SizedBox(
-                            height: height * 0.015,
-                          ),
+                          // Padding(
+                          //   padding: EdgeInsets.symmetric(
+                          //       horizontal: width * 0.06,
+                          //       vertical: height * 0.02),
+                          //   child: Text(
+                          //     'Rate Your Knowledge',
+                          //     style: GoogleFonts.getFont(
+                          //       'Ubuntu',
+                          //       fontSize: height * 0.03,
+                          //       color: AppColors.whiteColor,
+                          //       fontWeight: FontWeight.w400,
+                          //     ),
+                          //   ),
+                          // ),
+                          // Padding(
+                          //   padding: EdgeInsets.symmetric(
+                          //     vertical: height * 0.015,
+                          //     horizontal: width * 0.06,
+                          //   ),
+                          //   child: rateDomain("App Development", context),
+                          // ),
+                          // Padding(
+                          //   padding: EdgeInsets.symmetric(
+                          //     vertical: height * 0.015,
+                          //     horizontal: width * 0.06,
+                          //   ),
+                          //   child: rateDomain("Web Development", context),
+                          // ),
+                          // Padding(
+                          //   padding: EdgeInsets.symmetric(
+                          //     vertical: height * 0.015,
+                          //     horizontal: width * 0.06,
+                          //   ),
+                          //   child: rateDomain("Machine Learning", context),
+                          // ),
+                          // Padding(
+                          //   padding: EdgeInsets.symmetric(
+                          //     vertical: height * 0.015,
+                          //     horizontal: width * 0.06,
+                          //   ),
+                          //   child: rateDomain("Big Data", context),
+                          // ),
+                          // Padding(
+                          //   padding: EdgeInsets.symmetric(
+                          //     vertical: height * 0.015,
+                          //     horizontal: width * 0.06,
+                          //   ),
+                          //   child: rateDomain("Designing", context),
+                          // ),
+                          // SizedBox(
+                          //   height: height * 0.015,
+                          // ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              ElevatedButton(
-                                onPressed: () async {
-                                  //debugPrint(selectedNode);
-                                  final isValid =
-                                      _regFormKey.currentState!.validate();
-                                  if (!isValid) return;
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: height * 0.03,
+                                    horizontal: height * 0.02),
+                                width: width * 0.89,
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    //debugPrint(selectedNode);
+                                    final isValid =
+                                        _regFormKey.currentState!.validate();
+                                    if (!isValid) return;
 
-                                  await RecaptchaService.getToken();
+                                    await RecaptchaService.getToken();
 
-                                  Student.name = nameController.text;
-                                  Student.email = emailController.text.trim();
-                                  Student.rollNo = rollController.text.trim();
-                                  Student.phone = phoneController.text.trim();
-                                          //debugPrint("cp0");
+                                    Student.name = nameController.text;
+                                    Student.email = emailController.text.trim();
+                                    Student.rollNo = rollController.text.trim();
+                                    Student.phone = phoneController.text.trim();
+                                    //debugPrint("cp0");
 
-                                  registerUser();
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.backColor,
-                                  elevation: 0,
-                                  padding: const EdgeInsets.all(15),
-                                ),
-                                child: Text(
-                                  'Submit',
-                                  style: GoogleFonts.getFont(
-                                    'Ubuntu',
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: height * 0.035,
-                                    color: AppColors.whiteColor,
+                                    registerUser();
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: AppColors.whiteColor,
+                                      elevation: 0,
+                                      padding: const EdgeInsets.all(15),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                      )),
+                                  child: Text(
+                                    'Submit',
+                                    style: GoogleFonts.getFont(
+                                      'Ubuntu',
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: height * 0.022,
+                                      color: AppColors.backColor,
+                                    ),
                                   ),
                                 ),
                               ),

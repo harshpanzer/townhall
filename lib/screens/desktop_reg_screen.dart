@@ -26,7 +26,6 @@ class DropDownSelector {
 }
 
 class _DesktopRegScreenState extends State<DesktopRegScreen> {
-
   double _formProgress = 0;
   final _regFormKey = GlobalKey<FormState>();
   final RegisterService registerService = RegisterService();
@@ -45,13 +44,15 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
       domain: Student.domain,
       reCaptcha: Student.reCaptcha,
     );
-
   }
 
   TextEditingController nameController = TextEditingController(text: "Asjad");
-  TextEditingController emailController = TextEditingController(text: "asd123@akgec.ac.in");
-  TextEditingController rollController = TextEditingController(text: "1234567890123");
-  TextEditingController phoneController = TextEditingController(text: "1234567890");
+  TextEditingController emailController =
+      TextEditingController(text: "asd123@akgec.ac.in");
+  TextEditingController rollController =
+      TextEditingController(text: "1234567890123");
+  TextEditingController phoneController =
+      TextEditingController(text: "1234567890");
 
   FocusNode nameNode = FocusNode();
   FocusNode emailNode = FocusNode();
@@ -183,7 +184,7 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                 ),
                               ),
                               SizedBox(
-                                height: height*0.05,
+                                height: height * 0.05,
                               ),
                               Container(
                                 color: Colors.transparent,
@@ -200,7 +201,7 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                 ),
                               ),
                               SizedBox(
-                                height: height*0.05,
+                                height: height * 0.05,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -225,13 +226,14 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 10),
                                       child: GestureDetector(
                                         onTap: () async {
-                                          await launchUrl(Uri.parse('tel:1234567890'));
+                                          await launchUrl(
+                                              Uri.parse('tel:1234567890'));
                                         },
-                                        child:
-                                        Image.asset(
+                                        child: Image.asset(
                                           "images/call.png",
                                           color: Colors.white,
                                           fit: BoxFit.contain,
@@ -241,15 +243,17 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                       ),
                                     ),
                                     Container(
-                                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 10),
                                       child: GestureDetector(
                                         onTap: () async {
                                           await launchUrl(
-                                              Uri.parse('https://www.bdcoe.co.in'),
-                                              mode: LaunchMode.externalApplication);
+                                              Uri.parse(
+                                                  'https://www.bdcoe.co.in'),
+                                              mode: LaunchMode
+                                                  .externalApplication);
                                         },
-                                        child:
-                                        Image.asset(
+                                        child: Image.asset(
                                           "images/website.png",
                                           color: Colors.white,
                                           fit: BoxFit.contain,
@@ -259,15 +263,17 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                       ),
                                     ),
                                     Container(
-                                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 10),
                                       child: GestureDetector(
                                         onTap: () async {
                                           await launchUrl(
-                                              Uri.parse('https://www.instagram.com/bdcoe/'),
-                                              mode: LaunchMode.externalApplication);
+                                              Uri.parse(
+                                                  'https://www.instagram.com/bdcoe/'),
+                                              mode: LaunchMode
+                                                  .externalApplication);
                                         },
-                                        child:
-                                        Image.asset(
+                                        child: Image.asset(
                                           "images/insta.png",
                                           color: Colors.white,
                                           fit: BoxFit.contain,
@@ -277,13 +283,14 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                       ),
                                     ),
                                     Container(
-                                      margin: const EdgeInsets.symmetric(horizontal: 10),
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 10),
                                       child: GestureDetector(
                                         onTap: () async {
-                                          await launchUrl(Uri.parse('mailto: bdcoe@akgec.ac.in'));
+                                          await launchUrl(Uri.parse(
+                                              'mailto: bdcoe@akgec.ac.in'));
                                         },
-                                        child:
-                                        Image.asset(
+                                        child: Image.asset(
                                           "images/mail.png",
                                           color: Colors.white,
                                           fit: BoxFit.contain,
@@ -296,7 +303,7 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                 ),
                               ),
                               SizedBox(
-                                height: height*0.1,
+                                height: height * 0.1,
                               ),
                             ],
                           ),
@@ -353,7 +360,6 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                   ),
                                 ],
                               ),
-
                             ],
                           ),
                         ),
@@ -383,7 +389,7 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                             ],
                           ),
                           width: width * 0.5,
-                          height: height * 1.7,
+                          height: height,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -724,63 +730,65 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                   ),
                                 ),
                               ),
+                              // Padding(
+                              //   padding: EdgeInsets.symmetric(
+                              //       horizontal: height * 0.04,
+                              //       vertical: height * 0.02),
+                              //   child: Text(
+                              //     'Rate Your Knowledge',
+                              //     style: GoogleFonts.getFont(
+                              //       'Ubuntu',
+                              //       fontSize: height * 0.045,
+                              //       color: AppColors.backColor,
+                              //       fontWeight: FontWeight.w500,
+                              //     ),
+                              //   ),
+                              // ),
+                              // Padding(
+                              //   padding: EdgeInsets.symmetric(
+                              //       vertical: height * 0.015,
+                              //       horizontal: height * 0.04),
+                              //   child: rateDomain("App Development", context),
+                              // ),
+                              // Padding(
+                              //   padding: EdgeInsets.symmetric(
+                              //       vertical: height * 0.015,
+                              //       horizontal: height * 0.04),
+                              //   child: rateDomain("Web Development", context),
+                              // ),
+                              // Padding(
+                              //   padding: EdgeInsets.symmetric(
+                              //       vertical: height * 0.015,
+                              //       horizontal: height * 0.04),
+                              //   child: rateDomain("Machine Learning", context),
+                              // ),
+                              // Padding(
+                              //   padding: EdgeInsets.symmetric(
+                              //       vertical: height * 0.015,
+                              //       horizontal: height * 0.04),
+                              //   child: rateDomain("Big Data", context),
+                              // ),
+                              // Padding(
+                              //   padding: EdgeInsets.symmetric(
+                              //       vertical: height * 0.015,
+                              //       horizontal: height * 0.04),
+                              //   child: rateDomain("Designing", context),
+                              // ),
+                              // SizedBox(
+                              //   height: height * 0.03,
+                              // ),
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: height * 0.04,
-                                    vertical: height * 0.02),
-                                child: Text(
-                                  'Rate Your Knowledge',
-                                  style: GoogleFonts.getFont(
-                                    'Ubuntu',
-                                    fontSize: height * 0.045,
-                                    color: AppColors.backColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.015,
-                                    horizontal: height * 0.04),
-                                child: rateDomain("App Development", context),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.015,
-                                    horizontal: height * 0.04),
-                                child: rateDomain("Web Development", context),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.015,
-                                    horizontal: height * 0.04),
-                                child: rateDomain("Machine Learning", context),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.015,
-                                    horizontal: height * 0.04),
-                                child: rateDomain("Big Data", context),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.015,
-                                    horizontal: height * 0.04),
-                                child: rateDomain("Designing", context),
-                              ),
-                              SizedBox(
-                                height: height * 0.03,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+                                    horizontal: width * 0.05),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Expanded(
                                       child: ElevatedButton(
                                         onPressed: () async {
-                                          final isValid =
-                                              _regFormKey.currentState!.validate();
+                                          final isValid = _regFormKey
+                                              .currentState!
+                                              .validate();
                                           if (!isValid) return;
                                           await RecaptchaService.getToken();
                                           Student.name = nameController.text;
@@ -794,7 +802,8 @@ class _DesktopRegScreenState extends State<DesktopRegScreen> {
                                           registerUser();
                                         },
                                         style: ElevatedButton.styleFrom(
-                                          backgroundColor: AppColors.backColor.withOpacity(0.9),
+                                          backgroundColor: AppColors.backColor
+                                              .withOpacity(0.9),
                                           elevation: 10,
                                           padding: const EdgeInsets.all(20),
                                         ),
