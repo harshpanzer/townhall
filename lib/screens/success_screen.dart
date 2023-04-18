@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Success_Screen extends StatefulWidget {
   const Success_Screen({super.key});
@@ -11,6 +12,10 @@ class Success_Screen extends StatefulWidget {
 }
 
 class _Success_ScreenState extends State<Success_Screen> {
+  var website = Uri.parse('https://bdcoe.co.in/');
+  var insta = Uri.parse('https://www.instagram.com/bdcoe/');
+  var linkedin = Uri.parse(
+      'https://www.linkedin.com/school/big-data-centre-of-excellence/mycompany/');
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -21,31 +26,101 @@ class _Success_ScreenState extends State<Success_Screen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          Expanded(
+            child: SizedBox(
+                //height: height * 0.2,
+                ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Lottie.asset('assets/images/Comp 1.json',
-                  width: (width > 600) ? width * 0.15 : width * 0.3,
-                  fit: BoxFit.fitWidth),
+                  width: (width > 600) ? width * 0.08 : width * 0.1,
+                  fit: BoxFit.fitWidth,
+                  repeat: false),
             ],
           ),
-          AnimatedTextKit(
-            animatedTexts: [
-              TypewriterAnimatedText(
-                'Registered Successfully!',
-                textStyle: GoogleFonts.getFont(
-                  "Ubuntu",
-                  fontSize: (width > 600) ? width * 0.060 : width * 0.05,
-                  fontWeight: FontWeight.bold,
+          Container(
+            width: width * 0.6,
+            height: height * 0.2,
+            //decoration: BoxDecoration(color: Colors.amber),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  'Congratulations !! \nYou have been registered successfully.',
+                  textAlign: TextAlign.center,
+                  textStyle: GoogleFonts.getFont(
+                    "Ubuntu",
+                    //fontSize: (width > 900) ? width * 0.1 : width * 0.07,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  speed: const Duration(milliseconds: 100),
                 ),
-                speed: const Duration(milliseconds: 100),
+              ],
+              totalRepeatCount: 1,
+              pause: const Duration(milliseconds: 1000),
+              displayFullTextOnTap: true,
+              stopPauseOnTap: true,
+            ),
+          ),
+          SizedBox(
+            height: height * 0.1,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              GestureDetector(
+                child: Image.asset(
+                  "assets/images/web.png",
+                  height: (width > 800) ? 48 : 30,
+                  width: (width > 800) ? 48 : 30,
+                ),
+                onTap: (() async {
+                  await launchUrl(website);
+                }),
+              ),
+              Container(
+                margin: EdgeInsetsDirectional.only(start: 20, end: 20),
+                child: GestureDetector(
+                  child: Image.asset(
+                    "assets/images/instagram (1).png",
+                    height: (width > 800) ? 48 : 30,
+                    width: (width > 800) ? 48 : 30,
+                  ),
+                  onTap: (() async {
+                    await launchUrl(insta);
+                  }),
+                ),
+              ),
+              GestureDetector(
+                child: Image.asset(
+                  "assets/images/linkedin.png",
+                  height: (width > 800) ? 48 : 30,
+                  width: (width > 800) ? 48 : 30,
+                ),
+                onTap: (() async {
+                  await launchUrl(linkedin);
+                }),
               ),
             ],
-            totalRepeatCount: 1,
-            pause: const Duration(milliseconds: 1000),
-            displayFullTextOnTap: true,
-            stopPauseOnTap: true,
-          )
+          ),
+          Expanded(
+            child: SizedBox(
+                //height: height * 0.2,
+                ),
+          ),
+          Container(
+            height: height * 0.013,
+            //decoration: BoxDecoration(color: Colors.amber),
+            child: Text(
+              "Made with ♥ using Flutter",
+              style: TextStyle(
+                  fontSize: height * 0.01, letterSpacing: width * 0.003),
+            ),
+          ),
+          SizedBox(
+            height: height * 0.03,
+          ),
         ],
       ),
     );
